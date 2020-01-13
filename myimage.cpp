@@ -2,7 +2,7 @@
 
 MyImage::MyImage()
 {
-
+    qDebug << "testing";
 }
 
 MyImage::MyImage(const QString &id = "", const QByteArray &data)
