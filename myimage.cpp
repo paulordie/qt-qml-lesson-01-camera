@@ -1,11 +1,6 @@
 #include "myimage.h"
 
-MyImage::MyImage()
-{
-    qDebug << "testing";
-}
-
-MyImage::MyImage(const QString &id = "", const QByteArray &data)
+MyImage::MyImage(const QString &id, const QByteArray &data)
 {
     mId = id;
     mData = data;
@@ -23,10 +18,10 @@ void MyImage::setId(const QString &id)
 
 QByteArray MyImage::data() const
 {
-    return mDta;
+    return mData;
 }
 
 QString MyImage::id() const
 {
-    return mId
+    return mId;
 }

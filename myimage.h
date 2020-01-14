@@ -7,8 +7,7 @@
 class MyImage
 {
 public:
-    MyImage();
-    MyImage(const QString &id = "", const QByteArray &data);
+    MyImage(const QString &id = "", const QByteArray &data = QByteArray());
     void setData(const QByteArray &data);
     void setId(const QString &id);
     QByteArray data() const;

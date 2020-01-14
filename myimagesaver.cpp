@@ -1,23 +1,21 @@
-#include "myimagesaver.h"
 #include <QFile>
 #include <QImage>
 #include <QDebug>
 #include <QBuffer>
 #include <QStandardPaths>
 #include <QQuickItemGrabResult>
-
+#include "myimagesaver.h"
 
 MyImageSaver::MyImageSaver(QObject *parent)
     : QObject { parent }
 {
-    qDebug << "testing";
 }
 
 bool MyImageSaver::savePicture(const QString &id, QObject *objectImage)
 {
     const int nImages = mImages.size();
 
-    for (int ix = 0; ix < nImages; __ix)
+    for (int ix = 0; ix < nImages; ++ix)
     {
         if (mImages.at(ix).id() == id)
         {
@@ -27,7 +25,7 @@ bool MyImageSaver::savePicture(const QString &id, QObject *objectImage)
     QQuickItemGrabResult * item = static_cast<QQuickItemGrabResult *>(objectImage);
     QByteArray imageData;
     QBuffer buffer(&imageData);
-    if (item->image.save(&buffer, "PNG"))
+    if (item->image().save(&buffer, "PNG"))
     {
         MyImage image;
         image.setData(imageData);
