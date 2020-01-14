@@ -83,28 +83,28 @@ ApplicationWindow {
                     anchors.fill: parent
                     spacing: 1
 
-                    Switch {
-                        id: turnOnSwitch
-                        text: "ENCENDER"
-                        position: 0.0
-                        onPositionChanged: {
-                            buttonSound.play();
-                            if (position === 1.0) {
-                                camera.start();
-                            } else {
-                                camera.stop();
-                            }
-                        }
-                    }
+//                    Switch {
+//                        id: turnOnSwitch
+//                        text: "ENCENDER"
+//                        position: 0.0
+//                        onPositionChanged: {
+//                            buttonSound.play();
+//                            if (position === 1.0) {
+//                                camera.start();
+//                            } else {
+//                                camera.stop();
+//                            }
+//                        }
+//                    }
 
-                    Switch {
-                        id: roundedSwitch
-                        text: "CIRCULAR"
-                        position: 0.0
-                        onPositionChanged: {
-                            buttonSound.play();
-                        }
-                    }
+//                    Switch {
+//                        id: roundedSwitch
+//                        text: "CIRCULAR"
+//                        position: 0.0
+//                        onPositionChanged: {
+//                            buttonSound.play();
+//                        }
+//                    }
 
                     Image {
                         source: "qrc:/save.png"
