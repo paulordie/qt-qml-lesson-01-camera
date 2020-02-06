@@ -43,6 +43,7 @@ bool MyImageSaver::writePictures()
     {
         QFile file;
         QString filename = mImages.at(ix).id().split("/").last() + ".png";
+//        QString directory = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
         QString directory = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
         QString path = directory + "/" + filename;
         file.setFileName(path);

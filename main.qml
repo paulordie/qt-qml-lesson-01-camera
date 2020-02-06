@@ -64,7 +64,7 @@ ApplicationWindow {
 
         Item {
             id: cameraControls
-            width: 200
+            width: 300
             height: parent.height
 
             GroupBox {
@@ -113,11 +113,13 @@ ApplicationWindow {
                         fillMode: Image.PreserveAspectCrop
                         width: 55
                         height: 55
+                        
                         MouseArea {
                             anchors.fill: parent
                             onClicked: {
                                 beepSound.play();
                                 MyImageSaver.writePictures();
+                                console.log("image was wrote on desktop")
                             }
                         }
                     }
@@ -147,6 +149,7 @@ ApplicationWindow {
                         onPressed: {
                             captureButton1.color = "lime";
                             camera.imageCapture.capture();
+                            console.log("image was captured")
                             captureSound.play();
                         }
                         onReleased: {
@@ -188,7 +191,7 @@ ApplicationWindow {
             height: parent.height
             Rectangle {
                 anchors.fill: parent
-                color: "gray"
+                color: "green"
                 GridView {
                     id: grid
                     anchors.fill: parent
@@ -255,6 +258,7 @@ ApplicationWindow {
                             Component.onCompleted: {
                                 image.grabToImage(function(result) {
                                     MyImageSaver.savePicture(modelData.id, result);
+                                    console.log("pictures was saved!")
                                 });
                             }
                         }
